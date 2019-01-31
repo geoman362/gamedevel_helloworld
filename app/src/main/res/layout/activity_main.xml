@@ -31,4 +31,13 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/btn_star_big_on" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="TextView"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="36sp" />
+
 </android.support.design.widget.CoordinatorLayout>

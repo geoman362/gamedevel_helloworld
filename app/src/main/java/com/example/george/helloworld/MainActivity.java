@@ -8,8 +8,22 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView tv;
+    private String greeting;
+    Random pickALangauge = new Random();
+    private String chineseGreeting = "您好";
+    private String spanishGreeting = "Hola!";
+    private String arabicGreeting = " السلام عليكم";
+    private String hindiGreeting = "नमस्ते";
+    private String portugeseGreeting = "Olá";
+    private String russianGreeting = "Здравствуйте!";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +33,39 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        tv=new TextView(this);
+        tv=(TextView)findViewById(R.id.textView);
+
+        greeting = "Hello World";
+        tv.setText(greeting);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Choose a language!", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "More languages!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                int lang = pickALangauge.nextInt((5) + 1);
+                if(lang == 0){
+                    tv.setText(chineseGreeting);
+                }
+                else if(lang == 1){
+                    tv.setText(spanishGreeting);
+                }
+                else if(lang == 2){
+                    tv.setText(spanishGreeting);
+                }
+                else if(lang == 3){
+                    tv.setText(arabicGreeting);
+                }
+                else if(lang == 4){
+                    tv.setText(hindiGreeting);
+                }
+                else if(lang == 5){
+                    tv.setText(portugeseGreeting);
+                }
+                else{
+                    tv.setText(russianGreeting);
+                }
                 
             }
         });
